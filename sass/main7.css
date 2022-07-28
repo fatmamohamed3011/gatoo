@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  background-color: black;
+}
+
+:root {
+  --main-color: rgb(255, 198, 55) ;
+}
+
+.title {
+  display: grid;
+  grid-template-columns: repeat(3, 25%);
+  -moz-column-gap: 15%;
+       column-gap: 15%;
+  text-align: center;
+  padding-top: 3%;
+  margin-left: 3px;
+  background-color: #000;
+  width: 100%;
+  height: 130px;
+  position: fixed;
+  top: 0;
+}
+.title ul {
+  display: grid;
+  grid-template-columns: repeat(3, 12%);
+  -moz-column-gap: 3%;
+       column-gap: 3%;
+  margin-top: 7%;
+}
+.title ul li a i {
+  font-size: 20px;
+  color: #fff;
+  transition-duration: 1s;
+}
+.title ul li a i:hover {
+  color: var(--main-color);
+  transform: rotateY(180deg);
+}
+.title img {
+  cursor: pointer;
+}
+.title .phone-num {
+  background: none;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  width: 250px;
+  height: 50px;
+  padding-top: 10px;
+  font-weight: bold;
+  transition-duration: 1.5s;
+  letter-spacing: 2px;
+}
+.title .phone-num:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .title {
+    margin-left: 3%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+  .title .phone-num {
+    visibility: hidden;
+  }
+}
+@media (max-width: 630px) {
+  .title {
+    display: grid;
+    grid-template-columns: repeat(2, 42%);
+  }
+  .title ul {
+    width: 215px;
+  }
+  .title .phone-num {
+    visibility: hidden;
+  }
+  img {
+    width: 135px;
+    height: 50px;
+  }
+}
+.nav-icon {
+  padding-bottom: 5%;
+}
+.nav-icon .checkbtn {
+  font-size: 30px;
+  color: #fff;
+  float: right;
+  line-height: 80px;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  display: none;
+}
+.nav-icon #check {
+  display: none;
+}
+.nav-icon ul {
+  text-align: center;
+  margin-top: 2%;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  padding-left: 35%;
+  display: flex;
+  background-color: black;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 100px;
+}
+.nav-icon ul li {
+  padding-left: 17px;
+  padding-top: 15px;
+}
+.nav-icon ul li:hover > ul {
+  display: block;
+}
+.nav-icon ul li span {
+  display: none;
+}
+.nav-icon ul li a {
+  color: #fff;
+  font-size: 17px;
+  transition: 1s;
+  padding: 5px;
+}
+.nav-icon ul li a:hover {
+  color: var(--main-color);
+}
+.nav-icon ul li .active {
+  color: var(--main-color);
+}
+.nav-icon ul li ul {
+  width: 200px;
+  height: 140px;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: 100%;
+  margin: 0%;
+  padding: 0;
+  display: none;
+  -webkit-animation-name: zoomup;
+          animation-name: zoomup;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  text-align: center;
+  border-radius: 20px;
+}
+.nav-icon ul li ul li a {
+  color: #000;
+  display: block;
+  color: #fff;
+  height: 30px;
+  transition-duration: 1s;
+  padding-top: 3%;
+  padding-bottom: 4%;
+  text-align: center;
+}
+.nav-icon ul li ul li a:hover {
+  color: var(--main-color);
+}
+
+@-webkit-keyframes zoomup {
+  0% {
+    transform: translatey(80px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes zoomup {
+  0% {
+    transform: translatey(80px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+@media (max-width: 970px) {
+  .navpar .nav-icon ul li a {
+    font-size: 15px;
+  }
+}
+@media (max-width: 870px) {
+  .nav-icon {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(51, 51, 51);
+    position: fixed;
+    top: 100px;
+  }
+  .nav-icon .checkbtn {
+    display: block;
+  }
+  .nav-icon ul {
+    position: fixed;
+    width: 70%;
+    height: 50vh;
+    background-color: rgb(51, 51, 51);
+    top: 150px;
+    left: -27%;
+    transition-duration: 1.5s;
+    display: block;
+  }
+  .nav-icon ul li {
+    display: block;
+    line-height: 50px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .nav-icon ul li span {
+    display: inline-block;
+  }
+  .nav-icon ul li ul {
+    width: 200px;
+    height: 140px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 100%;
+    margin: 0%;
+    padding: 0;
+    display: none;
+    -webkit-animation-name: zoomup;
+            animation-name: zoomup;
+    -webkit-animation-duration: 1.2s;
+            animation-duration: 1.2s;
+    text-align: center;
+    border-radius: 20px;
+    margin-left: 127%;
+    background-color: rgb(51, 51, 51);
+    border-radius: 0;
+    top: 60%;
+  }
+  .nav-icon ul li ul li a {
+    color: #fff !important;
+    font-size: 17px;
+    display: block;
+    color: #fff;
+    height: 30px;
+    transition-duration: 1s;
+    padding-top: 3%;
+    padding-bottom: 4%;
+    text-align: center;
+  }
+  .nav-icon ul li ul li a:hover {
+    color: var(--main-color);
+  }
+  .nav-icon #check:checked ~ ul {
+    left: -100%;
+    transition-duration: 1.6s;
+  }
+  .nav-icon a {
+    color: #fff;
+  }
+  @-webkit-keyframes zoomup {
+    0% {
+      transform: translatex(-100px);
+    }
+    100% {
+      transform: translatex(0px);
+    }
+  }
+  @keyframes zoomup {
+    0% {
+      transform: translatex(-100px);
+    }
+    100% {
+      transform: translatex(0px);
+    }
+  }
+}
+.hero {
+  background-image: url(../img/11.jpg);
+  width: 100%;
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 600px;
+  margin-top: 4%;
+}
+.hero .text-hero {
+  padding-top: 17%;
+  padding-left: 5%;
+}
+.hero .text-hero p {
+  color: #fff;
+  font-size: 60px;
+  line-height: 70px;
+}
+.hero .text-hero button {
+  background-color: var(--main-color);
+  color: #000;
+  border: 1px solid var(--main-color);
+  width: 190px;
+  height: 50px;
+  transition-duration: 1.5s;
+  margin-top: 5%;
+  cursor: pointer;
+}
+.hero .text-hero button:hover {
+  background: none;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+@media (max-width: 870px) {
+  .hero .text-hero {
+    padding-top: 35%;
+    padding-left: 5%;
+  }
+  .hero .text-hero p {
+    font-size: 45px;
+  }
+}
+@media (max-width: 500px) {
+  .hero .text-hero {
+    padding-top: 45%;
+    padding-left: 5%;
+  }
+  .hero .text-hero p {
+    color: #fff;
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .hero .text-hero button {
+    margin-top: 10%;
+    width: 150px;
+    height: 40px;
+  }
+}/*# sourceMappingURL=main7.css.map */
